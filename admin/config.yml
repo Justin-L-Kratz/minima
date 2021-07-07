@@ -7,8 +7,8 @@ publish_mode: editorial_workflow
 media_folder: "/assets/img"
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "post"
+    label: "Post"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -16,6 +16,14 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: Rating (scale of 1-5), name: "rating", widget: number}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "page"
+    label: "Page"
+    folder: "."
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "string", default: "page"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
